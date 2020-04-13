@@ -26,20 +26,11 @@ if (passLength < 8 || passLength > 128) {
   var confirmNum = confirm(
     "Would you like random Numbers included in your password?"
   );
-
   var charSet = "";
 }
 
 // Write password to the #password input
-function writePassword(generateBtn) {
-  var password = generatePassword();
-  for (var i = 0; i < passLength; i++) {
-    password += charSet[Math.floor(Math.random() * charSet.length)];
-  }
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
+function writePassword() {
   if (confirmSym) {
     charSet += sym;
   }
@@ -61,6 +52,15 @@ function writePassword(generateBtn) {
       "You must have atleast 1 symbol or 1 number in your password. Please try again to continue."
     );
     location.reload();
+  }
+  var password = generatePassword();
+
+  var passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
+
+  for (var i = 0; i < passLength; i++) {
+    password += charSet[Math.floor(Math.random() * charSet.length)];
   }
 }
 
