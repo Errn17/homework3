@@ -53,7 +53,6 @@ function writePassword() {
     );
     location.reload();
   }
-  var password = generatePassword();
 
   var passwordText = document.querySelector("#password");
 
@@ -62,7 +61,10 @@ function writePassword() {
   for (var i = 0; i < passLength; i++) {
     password += charSet[Math.floor(Math.random() * charSet.length)];
   }
+  document.querySelector("#password").value = password;
 }
 
 // Add event listener to generate button
+
+generateBtn = document.querySelector("#generate").value = generateBtn;
 generateBtn.addEventListener("click", writePassword);
