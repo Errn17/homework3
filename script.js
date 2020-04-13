@@ -60,6 +60,8 @@ function writePassword() {
 
   passwordText.value = password;
 
+  //this loop will create the random password based off the data from the if statements above. It will then store it until its called upon
+
   for (var i = 0; i < passLength; i++) {
     password += charSet[Math.floor(Math.random() * charSet.length)];
   }
@@ -69,5 +71,5 @@ function writePassword() {
 // Add event listener to generate button
 
 var generateBtn = document.querySelector("#generate");
-
+//this will call the whole function generating the random password for the user
 generateBtn.addEventListener("click", writePassword);
