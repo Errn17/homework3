@@ -1,5 +1,5 @@
 //Global defined Variables
-var generateBtn = document.querySelector("#generate");
+
 var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; //defined upper case letters
 var lowerCase = "abcdefghijklmnopqrstuvwxyz"; //defined lower case letters
 var num = "0123456789"; //defined numbers
@@ -63,8 +63,12 @@ function writePassword() {
   }
   document.querySelector("#password").value = password;
 }
-
+console.log(generateBtn);
 // Add event listener to generate button
+var generateBtn = document.querySelector("#generate");
 
-generateBtn = document.querySelector("#generate").value = generateBtn;
+document.querySelector("#generate").onclick = function f() {
+  setStatusTrue();
+};
+
 generateBtn.addEventListener("click", writePassword);
