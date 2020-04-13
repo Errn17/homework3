@@ -1,5 +1,5 @@
 //Global defined Variables
-var passwordText = document.querySelector("#password");
+
 var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; //defined upper case letters
 var lowerCase = "abcdefghijklmnopqrstuvwxyz"; //defined lower case letters
 var num = "0123456789"; //defined numbers
@@ -29,7 +29,7 @@ if (passLength < 8 || passLength > 128) {
   var charSet = "";
 }
 
-// Write password to the #password input
+// The if statements will run based off the user input from the prompts at the start then it will run accordingly. and the for loop will run and display the random characters based off the user input for the length of the password.
 function writePassword() {
   if (confirmSym) {
     charSet += sym;
@@ -54,6 +54,10 @@ function writePassword() {
     location.reload();
   }
 
+  var passwordText = document.querySelector("#password").value;
+
+  var password = "";
+
   passwordText.value = password;
 
   for (var i = 0; i < passLength; i++) {
@@ -63,7 +67,7 @@ function writePassword() {
 }
 
 // Add event listener to generate button
+
 var generateBtn = document.querySelector("#generate");
 
 generateBtn.addEventListener("click", writePassword);
-console.log(passwordText);
